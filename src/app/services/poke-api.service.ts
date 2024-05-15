@@ -21,6 +21,24 @@ export class PokeAPIService implements OnInit {
     return Math.floor(Math.random() * 100);
   }
 
+  contadorDeVitorias() {
+    let contador = 0;
+    contador++
+    return contador;
+  }
+
+  contadorDeDerrotas() {
+    let contador = 0;
+    contador++
+    return contador;
+  }
+
+  contadorDeEmpates() {
+    let contador = 0;
+    contador++
+    return contador;
+  }
+
   pokemonInfo: any = {
     nome: '',
     habilidades: '', 
