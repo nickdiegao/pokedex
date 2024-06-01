@@ -30,10 +30,15 @@ export class Tab2Page implements OnInit {
     habilidades: '',
     altura: '',
     peso: '',
-    numeroPokedex: ''
+    numeroPokedex: '',
+    quantidadeDeDuelos: ''
   }
 
-  habilidadesDoPokemon:string = ''
+  gerarNumeroAleatorio(): number {
+    return Math.floor(Math.random() * 11);
+  }
+
+  habilidadesDoPokemon:string = '';
   numeroHabilidadesTab1:any = this.pokeAPIService.habilidadesPokemonAPI;
 
   buscarPokemon() {
@@ -44,6 +49,7 @@ export class Tab2Page implements OnInit {
       this.pokemonInfo.habilidades = JSON.parse(JSON.stringify(value))['abilities'].map((ability: any) => ability.ability.name);
       this.pokemonInfo.peso = JSON.parse(JSON.stringify(value))['weight'];
       this.pokemonInfo.numeroPokedex = JSON.parse(JSON.stringify(value))['id'];
+      this.pokemonInfo.quantidadeDeDuelos = this.gerarNumeroAleatorio() + 1;
 
       this.habilidadesDoPokemon = this.pokemonInfo.habilidades = JSON.parse(JSON.stringify(value))['abilities'].map((ability: any) => ability.ability.name);
 
